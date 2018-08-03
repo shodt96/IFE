@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		
+		<style>
+			
+			body,dl,dd,ul,ol,h1,h2,h3,h4,h5,h6,p,form,header,section,article,footer{margin:0;}
+			body,button,input,select,textarea{font:12px/1.5 tahoma,'\5FAE\8F6F\96C5\9ED1',sans-serif}
+			h1,h2,h3,h4,h5,h6{font-size:100%}
+			em,b{font-style:normal}
+			a{text-decoration:none} 
+			a:hover{text-decoration:none}
+			img{border:0}
+			button,input,select,textarea{font-size:100%;outline:none}
+			table{border-collapse:collapse;border-spacing:0}
+			td,th,ul,ol{padding:0}
+			li{list-style: none;}
+			
+			/*高度自适应*/
+			html{width: 100%;height: 100%;display:table;}
+			body{width: 100%;height: 100%;display:table-cell;min-width: 1000px;}
+			
+			
+			/*内容框架*/
+			.body-box{width:calc(100%-350px);height: 100%;padding-left: 350px;}
+			.body-content{width:100%;height: 100%;float:left;}
+			.body-nav{width: 350px;height: 100%;float:left;margin-left:-100%;right: 350px;}
+			.column{position: relative;}
+			
+			/*body-nav*/
+			.app-nav{width: 100px;height: 100%;float:left;background:#1d2531;position: relative;}
+			.menu-nav{width: 250px;height: 100%;float:left;background:#222c3c;}
+			
+			
+			/*app-nav*/
+			.app-btn{display:block;width: 60px;height: 60px;margin: 20px;transition:all .3s linear 0s;}
+			.app-btn1{background:url(img/Item1.png) no-repeat;}			
+			.app-btn2{background:url(img/Item2.png) no-repeat;}	
+			.app-btn3{background:url(img/Item3.png) no-repeat;}	
+			.app-more{background:url(img/add-app.png) no-repeat;}
+			
+				/*hover*/
+				.app-btn1:hover{background:url(img/Item1-h.png) no-repeat;}
+				.app-btn2:hover{background:url(img/Item2-h.png) no-repeat;}
+				.app-btn3:hover{background:url(img/Item3-h.png) no-repeat;}
+				.app-more:hover{transform:rotate(45deg);}
+			
+			.app-nav-content{margin-bottom:56px;}
+			.app-nav-bottom{width: 100%;height: 16px;position: absolute;bottom: 20px;left: 0px;}
+			.bot-btn{display: inline-block;width: 16px;height: 16px;transition:all .3s ease 0s;}
+			.bot-btn1{float: left;background: url(img/Grid.png) no-repeat;margin-left: 26px;}
+			.bot-btn2{float: left;background: url(img/Settings.png) no-repeat;margin-left: 16px;}
+				
+				/*hover*/
+				.bot-btn1:hover{background:url(img/Grid-h.png) no-repeat;}
+				.bot-btn2:hover{background:url(img/Settings-h.png) no-repeat;}
+				
+			/*menu-nav*/
+			.menu-nav-title{width:190px;height:16px;margin:30px;}
+			.menu-nav-title p{display: inline-block;font-size:12px;color:#5b6779;line-height:16px;font-weight: 700;}
+			.title-btn1{float: right;background: url(img/Settings.png) no-repeat;}
+			.title-btn1:hover{background:url(img/Settings-h.png) no-repeat;transition:all .3s ease 0s;}
+			
+			.menu-ul1{width: 190px;margin:0 30px;border-bottom:2px solid #2a3547;}
+			.menu-ul1 li{width: 190px;height: 24px;margin-top:10px;}
+			.menu-ul1 li:nth-of-type(1){margin-top: 0px;}
+			.menu-ul1 li a{display:inline-block;float:left;font-size: 14px;color: #b7c0cd;transition:all .3s ease 0s;}
+			.menu-ul1 li span{display:inline-block;float:right;width: 32px;height: 24px;background:#2a9ff5;border-radius: 15px;text-align: center;color: #fff;line-height: 24px;}
+			.menu-ul1 li:last-child{margin-bottom: 25px;}
+			.menu-ul1 li a:hover{color: #ffffff;}
+			
+			.menu-ul2{width: 190px;margin:0 30px;border-bottom:2px solid #2a3547;}
+			.menu-ul2 li{width: 190px;height: 24px;margin-top:10px;}
+			.menu-ul2 li:nth-of-type(1){margin-top: 0px;}
+			.menu-ul2 li a{display:inline-block;float:left;font-size: 14px;color: #b7c0cd;transition:all .3s ease 0s;margin-left: 15px;}
+			.menu-ul2 li i{display:inline-block;float:left;width: 18px;height: 18px;}
+			.menu-ul2 li:last-child{margin-bottom: 25px;}
+			.menu-ul2 li a:hover{color: #ffffff;}
+			.icon{background:url(img/icon.png) no-repeat;}
+			.icon1{background-position: 0px -1px;}
+			.icon2{background-position: 0px -36px;}
+			.icon3{background-position: 0px -74px;}
+			.icon4{background-position: 0px -109px;}
+			
+			.menu-ul3{width: 190px;margin:0 30px;border-bottom:2px solid #2a3547;}
+			.menu-ul3 li{width: 190px;height: 24px;margin-top:10px;}
+			.menu-ul3 li:nth-of-type(1){margin-top: 0px;}
+			.menu-ul3 li a{display:inline-block;float:left;font-size: 14px;color: #b7c0cd;transition:all .3s ease 0s;}
+			.menu-ul3 li span{display:inline-block;float:right;width: 32px;height: 24px;background:#2a9ff5;border-radius: 15px;text-align: center;color: #fff;line-height: 24px;}
+			.menu-ul3 li:last-child{margin-bottom: 25px;}
+			.menu-ul3 li a:hover{color: #ffffff;}
+			.menu-ul3 i{display: inline-block;float: right;width: 24px;height: 24px;background:url(img/alert-icon.png) no-repeat;border-radius:15px;color: #fff;}
+			
+			/*body-content*/
+			.content-top{width: 100%;height: 150px;}
+			.content-top1{width: 100%;height: 80px;}
+			.top1-left{width: 170px;height: 100%;float: left;}
+			.top1-left p{font-size: 24px;color: #354052;line-height: 80px;margin-left: 30px;}
+			.top1-right{width: 255px;height: 100%;float: right;}
+			
+			/*清除浮动*/
+			.clearfix {
+			  zoom: 1;
+			  }
+		</style>
+	</head>
+	<body>
+		<div class="body-box clearfix">
+			<div class="body-content column clearfix">
+				<div class="content-top">
+					<div class="content-top1">
+						<div class="top1-left"><p>Messages</p></div>
+						<div class="top1-right"></div>
+					</div>
+				</div>
+			</div>
+			<div class="body-nav column clearfix">
+					<div class="app-nav clearfix">	
+						<!--app按钮-->
+						<div class="app-nav-content">
+							<a href="javascript:;" class="app-btn1 app-btn" title="app"></a>
+							<a href="javascript:;" class="app-btn2 app-btn" title="app"></a>
+							<a href="javascript:;" class="app-btn3 app-btn" title="app"></a>
+							<a href="javascript:;" class="app-btn1 app-btn" title="app"></a>
+							<a href="javascript:;" class="app-btn2 app-btn" title="app"></a>
+							<a href="javascript:;" class="app-btn3 app-btn" title="app"></a>
+							<a href="javascript:;" class="app-btn1 app-btn" title="app"></a>
+							<a href="javascript:;" class="app-btn2 app-btn" title="app"></a>
+							<a href="javascript:;" class="app-btn3 app-btn" title="app"></a>
+							<a href="javascript:;" class="app-more app-btn" title="添加app"></a>
+						</div>
+						<!--底部按钮-->
+						<div class="app-nav-bottom clearfix">
+							<a href="javascript:;" class="bot-btn1 bot-btn" title="多功能"></a>
+							<a href="javascript:;" class="bot-btn2 bot-btn" title="设置"></a>	
+						</div>
+					</div>
+					<div class="menu-nav clearfix">
+						
+						<div class="clearfix">
+							<div class="menu-nav-title">
+								<p>MENU</p>
+								<a href="javascript:;" class="title-btn1 bot-btn" title="设置"></a>
+							</div>
+							<ul class="menu-ul1 clearfix">
+								<li><a href="javascript:;">Overview</a><span>54</span></li>
+								<li><a href="javascript:;">Sales</a><span>54</span></li>
+								<li><a href="javascript:;">Your Staff</a><span>54</span></li>
+								<li><a href="javascript:;">Analytics & Targeting</a><span>54</span></li>
+								<li><a href="javascript:;">What&#180;s New</a><span>54</span></li>
+							</ul>
+						</div>
+						<div class="clearfix">
+							<div class="menu-nav-title">
+								<p>Your Products</p>
+								<a href="javascript:;" class="title-btn1 bot-btn" title="设置"></a>
+							</div>
+							<ul class="menu-ul2 clearfix">
+								<li><i class="icon1 icon"></i><a href="javascript:;">Overview</a></li>
+								<li><i class="icon2 icon"></i><a href="javascript:;">Sales</a></li>
+								<li><i class="icon3 icon"></i><a href="javascript:;">Your Staff</a></li>
+								<li><i class="icon4 icon"></i><a href="javascript:;">Analytics & Targeting</a></li>
+							</ul>
+						</div>
+						<div class="clearfix">
+							<div class="menu-nav-title">
+								<p>Dashboard</p>
+								<a href="javascript:;" class="title-btn1 bot-btn" title="设置"></a>
+							</div>
+							<ul class="menu-ul3 clearfix">
+								<li><a href="javascript:;">Messages</a><span>54</span></li>
+								<li><a href="javascript:;">Connections</a><i></i></li>
+								<li><a href="javascript:;">Integrations</a><i></i></li>
+								<li><a href="javascript:;">Account Settings</a><i></i></li>
+								<li><a href="javascript:;">App Settings</a><i></i></li>
+							</ul>
+						</div>
+					</div>
+			</div>
+		</div>
+	</body>
+</html>
