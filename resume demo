@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Box model</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  
+  <style>
+  	*{margin:0px;padding:0px;}
+  	
+  	.resume{width: 875px;height:900px;margin: 0 auto;border:1px dashed gold;}
+  	.sidebar{width: 20%;height:900px;float:left;background: #65a5fa;}
+  	.main{float:left;}
+  	
+  	.sidebar p{padding-top: 50px;text-align:center;font-size: 30px;color:#fff;font-weight: 700;}
+  	
+  	h2{padding-top: 25px;}
+  	.main h2{margin-left:25px;font-size: 28px;}
+  	.main p{margin-top:25px;font-size: 18px;}
+  	.main span{margin-left: 25px;font-weight:700;}
+  	.power{margin-left: 25px;line-height:26px;}
+  	.main .power span{margin-left: 0px;font-weight:700;}
+  	}
+  </style>
+  
+  
+  <body>
+  	<div class="resume">
+        <div class="sidebar">
+    	    <p>简历</p>
+        </div>
+        
+        <div class="main">
+        	<h2>基本信息</h2>
+        	<div>
+        	    <p><span>姓名</span>&nbsp&nbsp吴桂源<span>性别</span>&nbsp&nbsp男<span>应聘职位</span>&nbsp&nbspWEB前端工程师</p>
+        	</div>
+        	<h2>联系方式</h2>
+        	<div>
+        	    <p><span>手机</span>&nbsp&nbsp13922878746<span>Email</span>&nbsp&nbsp493952032@qq.com<span>个人主页</span>&nbsp&nbspshodt96</p>
+        	</div>
+        	<h2>能力描述</h2>
+        	<div>
+        	    <p class="power"><span>技术能力</span><br>熟练掌握HTML,CSS,JavaScript</p>
+        	    <p class="power"><span>综合能力</span><br>良好的沟通，主动积极，努力勤奋</p>
+        	</div>
+        	<h2>教育经历	</h2>
+        	<div>
+        	    <p class="power"><span>本科</span><br>百度前端技术学院小微学院</p>
+        	    <p class="power"><span>研究生</span><br>百度前端技术学院大斌学院</p>
+        	</div>
+        	<h2>项目经历	</h2>
+        	<div>
+        	    <p class="power"><span>小度小度</span><br>作为前端工程师角色参与了ABC组件的开发</p>
+        	    <p class="power"><span>SAN Doc</span><br>作为文档工程师参与了SAN Doc</p>
+        	</div>
+        </div>
+    </div>
+  </body>
+</html>
