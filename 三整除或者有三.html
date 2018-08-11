@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">    
+    <title>IFE ECMAScript</title>
+</head>
+<body>        
+    <p id="result"></p>
+    <script>
+      var i;
+      var a;
+      var result = document.getElementById('result');
+      for(i=1;i<=100;i++){
+        if (i%3 === 0) {
+          document.write("PA" + "</br>");
+        }else if(String(i).indexOf(3) !== -1){
+          // i.indexOf() !== -1 是重点
+          document.write("PA" + "</br>");
+        }else{
+          document.write(i + "</br>");
+        }     
+      }
+    </script>
+</body>
+</html>
