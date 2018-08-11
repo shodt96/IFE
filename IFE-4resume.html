@@ -132,6 +132,22 @@
         document.getElementById('demo').onclick = function(){
             alert('做了一堆外包的菜菜重构页面，CSS溜溜的。JS一点都不会哦');
         }        
+
+
+        var myDate = new Date();//获取系统当前时间
+        var hour = myDate.getHours();
+        if (hour >= 6&& hour < 12){
+          alert('早上好！！');
+        }else if(hour >= 12&& hour < 14){
+          alert('中午好！！');
+        }else if(hour >= 14&& hour < 18){
+          alert('下午好！！');
+        }else if(hour >= 18&& hour < 24){
+          alert('晚上好！！');
+        }else if(hour > 0&& hour < 6){
+          alert('凌晨好！！');
+        }       
+        
      </script>
   </body>
 </html>
