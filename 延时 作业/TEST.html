@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>demo for animation</title>
+    </head>
+    <body>
+        <script>
+            var frame = document.createElement('div');
+            var body = document.querySelector('body');
+            frame.style.cssText = 'width:480px;height:480px;background:url(image.jpg);';
+            body.appendChild(frame);
+
+            window.onload=function(){
+                var t=0;
+                function omg(){
+                    frame.style.backgroundPositionY = t + 'px';
+                    t>8160?t=480:t-=480;
+                }
+                setInterval(omg,100);
+            }
+
+
+        </script>
+    </body>
+</html>
