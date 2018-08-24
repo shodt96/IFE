@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>demo for animation</title>
+    </head>
+    <body>
+
+        <div>
+            <label>Number A:<input id="radio-a" type="radio" name="math-obj" value="a"></label><input id="num-a" type="text">
+            <label>Number B:<input id="radio-b" type="radio" name="math-obj" value="b"></label><input id="num-b" type="text">
+        </div>
+        <div>
+            <button id="btn1">判断当前选中的输入框输入内容是否为数字</button>
+            <button id="btn2">把 A 四舍五入为 B 个小数位数的数字</button>
+            <button id="btn3">当前选中数字的绝对值</button>
+            <button id="btn4">对当前选中的数字进行上舍入</button>
+            <button id="btn5">对当前选中的数字进行下舍入</button>
+            <button id="btn6">把当前选中的数字四舍五入为最接近的整数</button>
+            <button id="btn7">返回 A 和 B 中的最高值</button>
+            <button id="btn8">返回 A 和 B 中的最低值</button>        
+        </div>
+        <p id="result"></p>
+
+        <script>
+            var btn1 = document.getElementById('btn1');
+            var btn2 = document.getElementById('btn2');
+            var btn3 = document.getElementById('btn3');
+            var btn4 = document.getElementById('btn4');
+            var btn5 = document.getElementById('btn5');
+            var btn6 = document.getElementById('btn6');
+            var btn7 = document.getElementById('btn7');
+            var btn8 = document.getElementById('btn8');
+
+            var a = document.getElementById('num-a');
+            var b = document.getElementById('num-b');
+
+            var ra = document.getElementById('radio-a');
+            var rb = document.getElementById('radio-b');
+
+            var t = document.getElementById('result');       
+
+            // 1.判断当前选中的输入框输入内容是否为数字
+            function isNumber(){
+                var value;
+                if (ra.checked) {
+                    value = a.value;
+                }else if (rb.checked){
+                    value = b.value;
+                }
+
+                if (isNaN(value)){t.innerHTML = "不是数字！"}
+                    else if (value === "") {t.innerHTML = "请输入！"}
+                    else {t.innerHTML = "数字！"}
+            }
+
+            btn1.addEventListener('click',isNumber);
+
+            // 2.把 A 四舍五入为 B 个小数位数的数字
+            function fourfive(){
+                var value1 = a.value;
+                var value2 = b.value;
+                t.innerHTML = Math.round(value1).toFixed(value2);
+            }
+
+            btn2.addEventListener('click',fourfive);
+
+           // 3.当前选中数字的绝对值
+           function isAbs(){
+                var value;
+                var abs;
+                if (ra.checked) {
+                    value = a.value;
+                }else if (rb.checked){
+                    value = b.value;
+                }
+
+                t.innerHTML =  Math.abs(value);
+           }
+
+           btn3.addEventListener('click',isAbs);
+
+           // 4.对当前选中的数字进行上舍入
+           function ssr(){
+                var value;
+                if (ra.checked) {
+                    value = a.value;
+                }else if (rb.checked){
+                    value = b.value;
+                }
+
+                t.innerHTML = Math.ceil(value);                
+           }
+
+           btn4.addEventListener('click',ssr);
+
+           // 5.对当前选中的数字进行下舍入
+           function xsr(){
+                var value;
+                if (ra.checked) {
+                    value = a.value;
+                }else if (rb.checked){
+                    value = b.value;
+                }
+
+                t.innerHTML = Math.floor(value);                
+           }
+
+           btn5.addEventListener('click',xsr);
+
+           // 6.把 A 四舍五入为 B 个小数位数的数字
+            function fourfive2(){
+               var value;
+                if (ra.checked) {
+                    value = a.value;
+                }else if (rb.checked){
+                    value = b.value;
+                }
+                t.innerHTML = Math.round(value);
+            }
+
+            btn6.addEventListener('click',fourfive2);
+
+            // 7.返回 A 和 B 中的最高值
+            btn7.addEventListener('click',function (){t.innerHTML = Math.max(a.value,b.value)});
+
+            // 8.返回 A 和 B 中的最小值
+            btn8.addEventListener('click',function (){t.innerHTML = Math.min(a.value,b.value)});            
+        </script>
+    </body>
+</html>

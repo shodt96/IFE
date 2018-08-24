@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Object-oriented JavaScript example</title>
+</head>
+
+<body>
+	<script>
+
+	// 将上面数组分别按从大到小以及从小到大进行排序后在console中输出
+	var arr1 = [43, 54, 4, -4, 84, 100, 58, 27, 140];
+
+	function NumberCompare(a,b){
+		return a - b;
+	}
+
+	console.log('数字从小到大进行排序:');
+	console.log(arr1.sort(NumberCompare));
+
+
+	// 将上面数组分别按字母顺序a-z及z-a进行排序，在console中输出
+	var arr2 = ['apple', 'dog', 'cat', 'car', 'zoo', 'orange', 'airplane'];
+
+	console.log('字母顺序a-z');
+	console.log(arr2.sort());
+
+	var arr3 = ['apple', 'dog', 'cat', 'car', 'zoo', 'orange', 'airplane'];
+
+	console.log('字母顺序z-a');
+	console.log(arr3.sort().reverse());
+
+	// 将上面的二维数组，按照每个元素中第二个数从大到小的顺序进行排序输出
+	var arr4 = [[10, 14], [16, 60], [7, 44], [26, 35], [22, 63]];
+
+	function ErCompare(a,b){
+		return b[1]-a[1];
+		// b到a表示从大到小，a到b表示从小到大。 0表示第一个数，1表示第二个数。
+	}
+
+	console.log('二维数组，第二个数从大到小的顺序');
+	console.log(arr4.sort(ErCompare));
+
+	// 将上面数组分别按元素对象的value值从小到大进行排序后输出
+		var arr5 = [
+    {
+        id: 1,
+        name: 'candy',
+        value: 40
+    }, {
+        id: 2,
+        name: 'Simon',
+        value: 50
+    }, {
+        id: 3,
+        name: 'Tony',
+        value: 45
+    }, {
+        id: 4,
+        name: 'Annie',
+        value: 60
+    }
+];
+
+	function ValueCompare(a,b){
+		return a.value - b.value;
+	}
+
+	console.log('value值从小到大进行排序');
+	console.log(arr5.sort(ValueCompare));
+
+	</script>
+
+</body>
+</html>
